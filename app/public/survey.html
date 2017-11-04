@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
 	<!-- Animate -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<!-- JQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -40,10 +40,10 @@
 
     .modal-content{
       background-color: #f4f4f4;
-      margin: 20% auto;
+      margin: 10% auto;
       padding: 10px;
-      width: 75%;
-      /*box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);*/
+      width: 40%;
+      box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
       animation-name: modalopen;
       animation-duration: 1s;
     }
@@ -71,57 +71,57 @@
   </style>
 </head>
 <body>
-  <!-- JUMBO -->
-	<div class="jumbotron">
-  		<h1 class="animated zoomIn"><span class="glyphicon glyphicon-thumbs-up"> </span>Wizard Finder</h1>
-  		<p class="lead">All Aboard for an adventure of a lifetime...</p>
-  		<!-- <hr class="hr-1"> -->
-  		<p>Tell me a little something about you so we can match you with the appropriate wizard</p>
-		<p class="current-time">Current Time: <span id="currentTime"></span></p>
-        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
-	</div>
-	<!-- MAIN -->
+  <div class = "container">
+    <!-- JUMBO -->
+  	<div class="jumbotron">
+    		<h1 class="animated zoomIn"><span class="glyphicon glyphicon-thumbs-up"> </span>Wizard Finder</h1>
+    		<p class="lead">All Aboard for an adventure of a lifetime...</p>
+    		<!-- <hr class="hr-1"> -->
+    		<p>Tell me a little something about you so we can match you with the appropriate wizard</p>
+  		<p class="current-time">Current Time: <span id="currentTime"></span></p>
+          <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+  	</div>
+  	<!-- MAIN -->
     <main role="main" class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <!-- Questionnaire -->
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">Questionnaire</h4>
-          </div>
-          <div class="panel-body">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Questionnaire -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Questionnaire</h4>
+            </div>
+            <div class="panel-body">
 
-            <form role="form">
+              <form role="form">
 
-              <div class="form-group">
-                <label for="reserve-name">Name</label>
-                <input type="text" class="form-control" id="reserve-name">
-              </div>
+                <div class="form-group">
+                  <label for="reserve-name">Your First and Last Name</label>
+                  <input type="text" class="form-control" id="reserve-name">
+                </div>
 
-              <div class="form-group">
-                <label for="reserve-photo">Photo (path like http://image.com/123.jpg)</label>
-                <input type="text" class="form-control" id="reserve-photo">
-              </div>
+                <div class="form-group">
+                  <label for="reserve-photo">Link to Photo (for example, a website path like 'http://image.com/123.jpg')</label>
+                  <input type="text" class="form-control" id="reserve-photo">
+                </div>
 
-              <div class="form-group">
-                <label for="reserve-q1">Question 1</label>
-                <input type="text" class="form-control" id="reserve-q1">
-              </div>
+                <div class="form-group">
+                  <label for="reserve-q1">Question 1</label>
+                  <input type="text" class="form-control" id="reserve-q1">
+                </div>
 
-              <div class="form-group">
-                <label for="reserve-q2">Question 2</label>
-                <input type="text" class="form-control" id="reserve-q2">
-              </div>
+                <div class="form-group">
+                  <label for="reserve-q2">Question 2</label>
+                  <input type="text" class="form-control" id="reserve-q2">
+                </div>
 
-      		  <!-- Click button to bring up Modal -->
-			  <!-- <a href="/survey"><button id="modalBtn" class="btn btn-primary">Click me to cast a spell!</button> -->
-	          <button type="button" class="btn btn-lg btn-danger" id="modalBtn"><span class="glyphicon glyphicon-sort"></span> Click me to cast a matching spell!</button>
-            </form>
+        		  <!-- Click button to bring up Modal -->
+  	          <button type="button" class="btn btn-lg btn-danger" id="modalBtn"><span class="glyphicon glyphicon-sort"></span> Click me to cast a matching spell!</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-	</main>
+  	</main>
 
 	<!-- MODAL -->
 	<div id="simpleModal" class="modal">
@@ -142,8 +142,8 @@
 	<!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-      	<p><a href="/api/wizards">API Table Link</a>
-        <span class="text-muted">Copyright &copy; 2017 Enrico Bernardo</span>
+      	<p><a href="/api/wizards">API Table Link</a> |
+        <span class="text-muted">Copyright &copy; 2017 Enrico Bernardo</span></p>
       </div>
     </footer>
 
