@@ -1,38 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Reservation Page</title>
+	<meta charset="UTF-8">
+	<title>Wizard Finder</title>
+	<!-- Bootstrap -->
+ 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
+	<!-- Animate -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<!-- JQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Moment.js Reference -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <style type="text/css">
+    #profileImg {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
 
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    .modal{
+      /*display: none;*/
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
 
+    .modal-content{
+      background-color: #f4f4f4;
+      margin: 20% auto;
+      padding: 10px;
+      width: 75%;
+      /*box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);*/
+      animation-name: modalopen;
+      animation-duration: 1s;
+    }
+
+    .modal-header, .modal-footer{
+      background: #c34113;
+      color:#fff;
+    }
+
+    .closeBtn{
+      float: right;
+      font-size: 30px;
+    }
+
+    .closeBtn:hover,closBtn:focus{
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @keyframes modalopen{
+      from{opacity: 0}
+      to {opacity: 1}
+    }
+  </style>
 </head>
+
 <body>
-
-  <div class="container">
-
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
-      <hr>
-      <h2 class="text-center">Make your reservation</h2>
-      <br>
-
-      <div class="text-center">
-        <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+	<!-- JUMBO -->
+	<div class="jumbotron">
+  		<h1 class="animated zoomIn"><span class="glyphicon glyphicon-thumbs-up"> </span>Wizard Finder</h1>
+  		<p class="lead">All Aboard for an adventure of a lifetime...</p>
+  		<!-- <hr class="hr-1"> -->
+  		<p>Tell me a little something about you so we can match you with the appropriate wizard</p>
+		<p class="current-time">Current Time: <span id="currentTime"></span></p>
         <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
-      </div>
-    </div>
+	</div>
 
+	<!-- MAIN -->
+    <main role="main" class="container">
     <div class="row">
       <div class="col-lg-12">
 
-        <!-- Reservation Page -->
+        <!-- Questionnaire -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title">Table Reservation</h4>
+            <h4 class="panel-title">Questionnaire</h4>
           </div>
           <div class="panel-body">
 
@@ -44,21 +99,24 @@
               </div>
 
               <div class="form-group">
-                <label for="reserve-phone">Phone Number</label>
-                <input type="text" class="form-control" id="reserve-phone">
+                <label for="reserve-photo">Photo (path like http://image.com/123.jpg)</label>
+                <input type="text" class="form-control" id="reserve-photo">
               </div>
 
               <div class="form-group">
-                <label for="reserve-email">Email</label>
-                <input type="text" class="form-control" id="reserve-email">
+                <label for="reserve-q1">Question 1</label>
+                <input type="text" class="form-control" id="reserve-q1">
               </div>
 
               <div class="form-group">
-                <label for="reserve-unique-id">Unique ID</label>
-                <input type="text" class="form-control" id="reserve-unique-id">
+                <label for="reserve-q2">Question 2</label>
+                <input type="text" class="form-control" id="reserve-q2">
               </div>
 
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+      		  <!-- Click button to bring up Modal -->
+			  <!-- <a href="/survey"><button id="modalBtn" class="btn btn-primary">Click me to cast a spell!</button> -->
+	          <button type="button" class="btn btn-lg btn-danger" id="modalBtn"><span class="glyphicon glyphicon-sort"></span> Click me to cast a matching spell!</button>
+
             </form>
 
           </div>
@@ -67,14 +125,33 @@
       </div>
     </div>
 
+	</main>
 
+	<!-- MODAL -->
+	<div id="simpleModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="closeBtn">&times;</span>
+				<h2>Your perfect Wizard</h2>
+			</div>
+			<div class="modal-body">
+				<img src="https://images.pottermore.com/bxd3o8b291gf/3SQ3X2km8wkQIsQWa02yOY/25f258f21bdbe5f552a4419bb775f4f0/HarryPotter_WB_F4_HarryPotterMidshot_Promo_080615_Port.jpg" id="profileImg">
+			</div>
+			<div class="modal-footer">
+				<h2>Harry Potter</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+      	<p><a href="/api/wizards">API Table Link</a>
+        <span class="text-muted">Copyright &copy; 2017 Enrico Bernardo</span>
       </div>
     </footer>
 
-  </div>
+	<!-- <script type="text/javascript" src="./app.js"></script> -->
 
 </body>
 </html>
@@ -82,50 +159,94 @@
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
 
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  // Get modal element
+  var modal = document.getElementById('simpleModal');
+  // Get open modal button
+  var modalBtn = document.getElementById('modalBtn');
+  // Get close modal button
+  var closeBtn = document.getElementsByClassName('closeBtn')[0];
 
-    $(".submit").on("click", function(event) {
-      event.preventDefault();
+  // Listen for open click
+  modalBtn.addEventListener('click', openModal);
+  // Listen for close click
+  closeBtn.addEventListener('click', closeModal);
+  // Listen for outside click
+  window.addEventListener('click', outsideClick);
 
-      // Here we grab the form elements
-      var newReservation = {
-        customerName: $("#reserve-name").val().trim(),
-        phoneNumber: $("#reserve-phone").val().trim(),
-        customerEmail: $("#reserve-email").val().trim(),
-        customerID: $("#reserve-unique-id").val().trim()
-      };
+  // Function to open modal
+  function openModal(){
+    modal.style.display = 'block';
+  }
 
-      console.log(newReservation);
+  // Function to close modal
+  function closeModal(){
+    modal.style.display = 'none';
+  }
 
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
+  // Function to close modal if outside click
+  function outsideClick(e){ 
+    if(e.target == modal) {
+    modal.style.display = 'none';
+    }
+  }
 
-      $.post("/api/wizards", newReservation,
-        function(data) {
+  // Shows current time in the jumbotron
+  function displayCurrentTime() {
+    var currentTime = moment().format("hh:mm A");
+    $("#currentTime").html(currentTime);
+  }
 
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("Yay! You are officially booked!");
-          }
+  $(".submit").on("click", function(event) {
+    event.preventDefault();
 
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Sorry you are on the wait list");
-          }
+  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  // Here we grab the form elements
+  var newReservation = {
+    customerName: $("#reserve-name").val().trim(),
+    phoneNumber: $("#reserve-phone").val().trim(),
+    customerEmail: $("#reserve-email").val().trim(),
+    customerID: $("#reserve-unique-id").val().trim()
+  };
 
-          // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
+  console.log(newReservation);
 
-        });
+  // This line is the magic. It"s very similar to the standard ajax function we used.
+  // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+  // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+  // depending on if a tables is available or not.
+
+  $.post("/api/wizards", newReservation,
+    function(data) {
+
+      // If a table is available... tell user they are booked.
+      if (data) {
+        alert("Yay! You are officially Matched!");
+      }
+
+      // If a table is available... tell user they on the waiting list.
+      else {
+        alert("Sorry you are on the wait list");
+      }
+
+      // Clear the form when submitting
+      $("#reserve-name").val("");
+      $("#reserve-phone").val("");
+      $("#reserve-email").val("");
+      $("#reserve-unique-id").val("");
 
     });
+
+});
+
+// Main Process
+// *****************************************
+$(document).ready(function() {
+  displayCurrentTime();
+  setInterval(displayCurrentTime, 10000);
+});
+
 
 </script>

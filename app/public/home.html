@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tables Page</title>
+  	<meta charset="UTF-8">
+  	<title>Wizard Finder</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<!-- Latest compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
+	<!-- Animate -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<!-- JQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	<!-- Moment.js Reference -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>	
 
 </head>
 <body>
 
   <div class="container">
 
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
-      <hr>
-      <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
-      <br>
-
-      <div class="text-center">
-        <!-- <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a> -->
+	<!-- JUMBO -->
+	<div class="jumbotron">
+  		<h1 class="animated zoomIn"><span class="glyphicon glyphicon-thumbs-up"> </span>Wizard Finder</h1>
+  		<p class="lead">All Aboard for an adventure of a lifetime...</p>
+  		<!-- <hr class="hr-1"> -->
+  		<p>Tell me a little something about you so we can match you with the appropriate wizard</p>
         <a href="/survey"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Let us get to Know you!</button></a>
-      </div>
+        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+	</div>
 
-    </div>
-
+	<!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+      	<p><a href="/api/wizards">API Table Link</a>
+        <span class="text-muted">Copyright &copy; 2017 Enrico Bernardo</span>
       </div>
     </footer>
 
-  </div>
-
+	<!-- <script type="text/javascript" src="./app.js"></script> -->
 
 </body>
 </html>

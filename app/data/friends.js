@@ -7,7 +7,7 @@
 var wizardsArray = [
 	{
 		wizardName: "Harry Potter",
-		photo: "https://www.pottermore.com/features/harry-potters-worst-decisions",
+		photo: "https://images.pottermore.com/bxd3o8b291gf/3SQ3X2km8wkQIsQWa02yOY/25f258f21bdbe5f552a4419bb775f4f0/HarryPotter_WB_F4_HarryPotterMidshot_Promo_080615_Port.jpg",
 		scores: ["5",
 				 "1",
 				 "3",
@@ -17,7 +17,7 @@ var wizardsArray = [
 	},
 	{
 		wizardName: "Ron Weasly",
-		photo: "https://www.pottermore.com/image/dress-robes",
+		photo: "https://images.pottermore.com/bxd3o8b291gf/7f7njYBbqg0AquIQ6Way0o/f59fb19f88e90dbb84f7ad99e94e2742/RonWeasley_WB_F4_RonAndHarryLookingAtTheirDressrobes_Still_080615_Land.jpg",
 		scores: ["5",
 				 "2",
 				 "3",
