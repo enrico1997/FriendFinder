@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Wizard Finder</title>
+	<!-- Bootstrap -->
+ 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
+	<!-- Animate -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<!-- JQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Moment.js Reference -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>	
+</head>
+<body>
+	<!-- JUMBO -->
+	<div class="jumbotron">
+  		<h1 class="animated zoomIn"><span class="glyphicon glyphicon-thumbs-up"> </span>Wizard Finder</h1>
+  		<p class="lead">All Aboard for an adventure of a lifetime...</p>
+  		<!-- <hr class="hr-1"> -->
+  		<p>Tell me a little something about you so we can match you with the appropriate wizard</p>
+		<p class="current-time">Current Time: <span id="currentTime"></span></p>
+        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+	</div>
+
+	<!-- MAIN -->
+    <main role="main" class="container">
+    	<p>Create Survey Questions here, do the logic and then click the button below to process and present the match</p><br>
+    	<p>Lorem corned beef non magna reprehenderit dolore occaecat pork chop flank capicola jerky venison cupidatat incididunt. Bresaola prosciutto bacon proident ribeye. Jowl biltong chuck hamburger fugiat in jerky occaecat commodo t-bone ut burgdoggen sausage swine voluptate. Frankfurter cow culpa pancetta sirloin picanha. Swine t-bone ham kielbasa laboris quis et picanha consequat incididunt ea consectetur. In irure chuck adipisicing, meatloaf andouille biltong sed pork aute labore ribeye prosciutto elit. Picanha sirloin laborum pastrami cow beef ribs shank voluptate elit kevin filet mignon. Consectetur short loin exercitation pariatur irure dolore turducken. Chuck sint burgdoggen salami.</p><br>
+  		<!-- Click button to bring up Modal -->
+		<button id="modalBtn" class="btn btn-primary">Click me to cast a spell!</button>
+	</main>
+
+	<!-- MODAL -->
+	<div id="simpleModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="closeBtn">&times;</span>
+				<h2>Harry Potter</h2>
+			</div>
+			<div class="modal-body">
+				<img src="https://images.pottermore.com/bxd3o8b291gf/3SQ3X2km8wkQIsQWa02yOY/25f258f21bdbe5f552a4419bb775f4f0/HarryPotter_WB_F4_HarryPotterMidshot_Promo_080615_Port.jpg">
+			</div>
+			<div class="modal-footer">
+				<h2>Modal Footer</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Copyright &copy; 2017 Enrico Bernardo</span>
+      </div>
+    </footer>
+
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+</html>

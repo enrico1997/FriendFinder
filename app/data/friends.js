@@ -13,7 +13,7 @@ var wizardsArray = [
 				 "3",
 		 		 "5",
 		 		 "2",
-		 		 "3"
+		 		 "3"]
 	},
 	{
 		wizardName: "Ron Weasly",
@@ -23,7 +23,7 @@ var wizardsArray = [
 				 "3",
 		 		 "4",
 		 		 "1",
-		 		 "4"
+		 		 "4"]
 	}
 ];
 
