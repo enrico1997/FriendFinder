@@ -5,6 +5,8 @@
 
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
+var morgan = require("morgan");
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
@@ -18,8 +20,12 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
+app.use(morgan("tiny"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Make all content in public folder accessible
+app.use('/public', express.static(path.join(__dirname, '/app/public')));
 
 // ================================================================================
 // ROUTER

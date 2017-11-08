@@ -7,68 +7,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
 	<!-- Animate -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="public/assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="public/assets/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<!-- JQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Moment.js Reference -->
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  <style type="text/css">
-    .jumbotron {
-    padding: 20px;
-    min-height: 20vw;
-    }
-    
-    #profileImg {
-      border-radius: 8px;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .modal{
-      /*display: none;*/
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.5);
-    }
-
-    .modal-content{
-      background-color: #f4f4f4;
-      margin: 10% auto;
-      padding: 10px;
-      width: 40%;
-      box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
-      animation-name: modalopen;
-      animation-duration: 1s;
-    }
-
-    .modal-header, .modal-footer{
-      background: #c34113;
-      color:#fff;
-    }
-
-    .closeBtn{
-      float: right;
-      font-size: 30px;
-    }
-
-    .closeBtn:hover,closBtn:focus{
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    @keyframes modalopen{
-      from{opacity: 0}
-      to {opacity: 1}
-    }
-  </style>
 </head>
 <body>
   <div class = "container">
@@ -96,22 +41,77 @@
 
                 <div class="form-group">
                   <label for="reserve-name">Your First and Last Name</label>
-                  <input type="text" class="form-control" id="reserve-name">
+                  <input type="text" class="form-control" id="wizard-name">
                 </div>
 
                 <div class="form-group">
                   <label for="reserve-photo">Link to Photo (for example, a website path like 'http://image.com/123.jpg')</label>
-                  <input type="text" class="form-control" id="reserve-photo">
+                  <input type="text" class="form-control" id="wizard-photo">
                 </div>
 
                 <div class="form-group">
                   <label for="reserve-q1">Question 1</label>
-                  <input type="text" class="form-control" id="reserve-q1">
+                  <h4>Your mind is spell</h4>
+                  <select data-placeholder="" class="chosen-select" id="reserve-q1">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="reserve-q2">Question 2</label>
-                  <input type="text" class="form-control" id="reserve-q2">
+                  <label for="reserve-q1">Question 2</label>
+                  <h4>Your rad is rad</h4>
+                  <select data-placeholder="" class="chosen-select" id="reserve-q2">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="reserve-q1">Question 3</label>
+                  <h4>Your cast is casty</h4>
+                  <select data-placeholder="" class="chosen-select" id="reserve-q3">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="reserve-q1">Question 4</label>
+                  <h4>Your mind is spell4</h4>
+                  <select data-placeholder="" class="chosen-select" id="reserve-q4">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="reserve-q1">Question 5</label>
+                  <h4>Your mind is spell5</h4>
+                  <select data-placeholder="" class="chosen-select" id="reserve-q5">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
                 </div>
 
         		  <!-- Click button to bring up Modal -->

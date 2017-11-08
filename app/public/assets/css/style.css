@@ -1,0 +1,98 @@
+h1,
+h2,
+h3,
+label,
+th,
+td {
+  font-weight: 400;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: url("../images/clouds.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+button,
+form,
+input {
+  margin: 10px;
+  padding-top: 5px;
+}
+
+@font-face {
+  font-family: HARRYP__;
+  src: url(HARRYP__.TTF);
+}
+
+h1, .correctText {
+  font-family: HARRYP__;
+  padding-bottom: 20px;
+  font-size: 40px;
+  line-height: 49px;
+  border-bottom: 3px solid #ddd;
+}
+
+h2 {
+  font-size:30px;	
+}
+
+.jumbotron {
+    padding: 20px;
+    min-height: 20vw;
+    }
+    
+    #profileImg {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .modal{
+      /*display: none;*/
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content{
+      background-color: #f4f4f4;
+      margin: 10% auto;
+      padding: 10px;
+      width: 40%;
+      box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+      animation-name: modalopen;
+      animation-duration: 1s;
+    }
+
+    .modal-header, .modal-footer{
+      background: #c34113;
+      color:#fff;
+    }
+
+    .closeBtn{
+      float: right;
+      font-size: 30px;
+    }
+
+    .closeBtn:hover,closBtn:focus{
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @keyframes modalopen{
+      from{opacity: 0}
+      to {opacity: 1}
+    }
+
+footer {
+  font-family: HARRYP__;
+}
